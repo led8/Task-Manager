@@ -1,0 +1,8 @@
+<div class="task">
+  <p><strong>Title: <%= task.title %></strong></p>
+  <p><strong>Content: <%= task.content %></strong></p>
+  <p><strong>Progress: <%= task.progress %></strong></p>
+  <p><strong>User: <%= task.user.email %></strong></p>
+  <%= link_to 'Go to task', task_path(task) %>
+  <p>**************************</p>
+</div>

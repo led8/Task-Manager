@@ -3,10 +3,15 @@ class TaskPolicy < ApplicationPolicy
     def resolve
       scope.where(user: user)
     end
+  end
 
-    def show?
-      # record.user == user
-      true
-    end
+  def show?
+    record.user == user
+    # true
+  end
+
+  def create?
+    record.user == user
+    # true
   end
 end

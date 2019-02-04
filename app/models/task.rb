@@ -3,5 +3,5 @@ class Task < ApplicationRecord
 
   validates :title, presence: true
   validates :content, presence: true
-  validates :progress, presence: true, inclusion: { in: %w(Terminer En\ cours A\ faire) }
+  validates :progress, presence: true, inclusion: { in: %w[Terminer En\ cours A\ faire] }
 end

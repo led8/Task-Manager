@@ -1,0 +1,4 @@
+const tasks = document.getElementById('tasks');
+const task = '<%= j render "tasks/index", task: @task %>';
+
+tasks.insertAdjacentHTML('beforeend', task);

@@ -1,15 +1,15 @@
 <h1>Tasks#index</h1>
 <p>Find me in app/views/tasks/index.html.erb</p>
-
-
-<% @tasks.each do |task| %>
-  <p><strong>Title</strong></p>
-  <p><%= task.title %></p>
-  <p><strong>Content</strong></p>
-  <p><%= task.content %></p>
-  <p><strong>Progress</strong></p>
-  <p><%= task.progress %></p>
-  <p><strong>User</strong></p>
-  <p><%= task.user.email %></p>
-  <p>**************************</p>
+<%= simple_form_for(@task, remote: true) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content, as: :text %>
+  <%= f.input :progress, collection: %w[Terminer En\ cours A\ faire] %>
+  <%= f.button :submit %>
 <% end %>
+
+
+<div id="tasks">
+<% @tasks.each do |task| %>
+  <%= render 'tasks/index', task: task %>
+<% end %>
+</div>
