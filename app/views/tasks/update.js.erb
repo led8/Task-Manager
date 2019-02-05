@@ -1,0 +1,26 @@
+const form = document.querySelectorAll('.form-control');
+
+const updateTask = (taskHTML) => {
+  const task = document.getElementById('task-title');
+  task.innerText = taskHTML;
+
+  alert('Your task has been correctly updated');
+};
+
+const errorTask = () => {
+  const form = document.querySelectorAll('.form-control');
+  form.forEach((input) => {
+    if (input.value === ''){
+      input.style.borderColor = 'red';
+    } else {
+      input.style.borderColor = 'green';
+    };
+    alert('Something wrong happens');
+  });
+};
+
+<% if @task.errors.any? %>
+  errorTask();
+<% else %>
+  updateTask(form[0].value);
+<% end %>

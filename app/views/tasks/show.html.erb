@@ -1,5 +1,12 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<div id="task">
+  <h1>Tasks#show</h1>
+  <p>Find me in app/views/tasks/show.html.erb</p>
+  <%= simple_form_for(@task, remote: true) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content, as: :text %>
+    <%= f.input :progress, collection: %w[Terminer En\ cours A\ faire] %>
+    <%= f.button :submit %>
+  <% end %>
 
-<h1><%= @task.title %></h1>
-<%= link_to 'Go back to tasks', tasks_path %>
+  <%= render 'tasks/show', task: @task %>
+</div>
