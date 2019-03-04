@@ -1,6 +1,6 @@
 const addTask = (taskHTML) => {
   const tasks = document.getElementById('tasks');
-  tasks.insertAdjacentHTML('beforeend', taskHTML);
+  tasks.insertAdjacentHTML('afterbegin', taskHTML);
 
   const form = document.querySelectorAll('.form-control');
   alert(`${form[0].value} has been correctly created`);
@@ -17,8 +17,8 @@ const errorTask = () => {
     } else {
       input.style.borderColor = 'green';
     };
-    alert('Something wrong happens');
   });
+  alert('Something wrong happens');
 };
 
 <% if @task.errors.any? %>

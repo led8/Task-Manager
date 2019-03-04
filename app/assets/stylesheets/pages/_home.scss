@@ -1,1 +1,28 @@
-// Specific CSS for your home-page
+.center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+h1.title {
+  margin-bottom: 40px;
+}
+
+.btn-red {
+  color: white;
+  background: #fa003c;
+  padding: 7px 40px;
+  border-radius: 20px;
+  border: 1px #fa003c solid;
+  transition-property: color, border, background;
+  transition-duration: 1s;
+  transition-timing-function: ease-out, cubic-bezier(.82, .1, .14, 1.12);
+  &:hover {
+    color: #5d5da2;
+    text-decoration: none;
+    background: transparent;
+    border-radius: 20px;
+    border: 1px #5d5da2 solid;
+  }
+}

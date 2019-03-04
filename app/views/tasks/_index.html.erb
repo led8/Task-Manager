@@ -1,8 +1,27 @@
-<div class="task">
-  <p><strong>Title: <%= task.title %></strong></p>
-  <p><strong>Content: <%= task.content %></strong></p>
-  <p><strong>Progress: <%= task.progress %></strong></p>
-  <p><strong>User: <%= task.user.email %></strong></p>
-  <%= link_to 'Go to task', task_path(task) %>
-  <p>**************************</p>
+<div class="col-md-4 offset-md-2 mt-5">
+  <% if task.progress == 'Terminer' %>
+    <div class="card task-style-completed">
+      <div class="card-body task">
+        <h5 class="card-title"><%= task.title %></h5>
+        <h6 class="card-subtitle task-content-style"><%= task.content %></h6>
+        <i><%= link_to '', task_path(task), :class => "far fa-eye card-link" %></i>
+      </div>
+    </div>
+  <% elsif task.progress == 'En cours' %>
+    <div class="card task-style-in-progress">
+      <div class="card-body task">
+        <h5 class="card-title"><%= task.title %></h5>
+        <h6 class="card-subtitle task-content-style"><%= task.content %></h6>
+        <i><%= link_to '', task_path(task), :class => "far fa-eye card-link" %></i>
+      </div>
+    </div>
+  <% else %>
+    <div class="card task-style-to-done">
+      <div class="card-body task">
+        <h5 class="card-title"><%= task.title %></h5>
+        <h6 class="card-subtitle task-content-style"><%= task.content %></h6>
+        <i><%= link_to '', task_path(task), :class => "far fa-eye card-link" %></i>
+      </div>
+    </div>
+  <% end %>
 </div>

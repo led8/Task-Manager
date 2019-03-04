@@ -1,0 +1,57 @@
+.index-title {
+  animation: intro 5s infinite;
+}
+
+@keyframes intro {
+  0% {opacity: 0.3}
+  25% {opacity: 1}
+  50% {opacity: 0.3}
+  75% {opacity: 1}
+  100% {opacity: 0.3}
+}
+
+.task-style-completed {
+  width: 300px;
+  height: 150px;
+  background: transparent;
+  border: 1px solid #00e600;
+  border-radius: 15px;
+  color: white;
+}
+
+.task-style-in-progress {
+  width: 300px;
+  height: 150px;
+  background: transparent;
+  border: 1px solid #ff9900;
+  border-radius: 15px;
+  color: white;
+}
+
+.task-style-to-done {
+  width: 300px;
+  height: 150px;
+  background: #fa003c;
+  border: 1px solid #fa003c;
+  border-radius: 15px;
+  color: white;
+}
+
+.task-content-style {
+  color: #5d5da2;
+}
+
+.card-link {
+  color: white;
+  position: absolute;
+  top: 80%;
+  left: 90%;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+#tasks {
+  border: 1px white solid;
+}
